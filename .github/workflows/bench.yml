@@ -121,6 +121,8 @@ jobs:
     name: Post PR comment
     runs-on: ubuntu-latest
     needs: bench
+    permissions:
+      issues: write
     if: needs.bench.outputs.pr_number != ''
     steps:
       - name: Download results
